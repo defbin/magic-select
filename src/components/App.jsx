@@ -48,7 +48,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Container>
-        <h2>Magic Select ({ this.state.selected })</h2>
+        <h2>Magic Select</h2>
 
         <FormGroup check>
           <Label check>

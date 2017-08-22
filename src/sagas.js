@@ -4,7 +4,7 @@ import * as actions from './actions'
 
 export function* fetchSuggestions({ payload: { value } }) {
   try {
-    const response = yield call(api.getSuggestions, value)
+    const response = yield call(api.getCountries, value)
     yield put(actions.suggestions.success(value, response))
   } catch (error) {
     yield put(actions.suggestions.failure(value, error))

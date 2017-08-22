@@ -1,4 +1,5 @@
 import React from 'react'
+import FlagIcon from './FlatIcon.jsx'
 
 export default class CustomValue extends React.PureComponent {
   handleMouseDown = (event) => {
@@ -24,8 +25,8 @@ export default class CustomValue extends React.PureComponent {
         onMouseDown={this.handleMouseDown}
         onMouseEnter={this.handleMouseEnter}
         onMouseMove={this.handleMouseMove}
-        title={this.props.option.label}
       >
+        <FlagIcon url={this.props.option.flag} title={this.props.option.label} />
         {this.props.children}
       </div>
     )

@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import 'react-select/dist/react-select.css'
 import 'babel-polyfill'
+import 'whatwg-fetch'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App.jsx'

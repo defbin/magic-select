@@ -1,14 +1,15 @@
-import suggestions from '../mocks/suggestions.json'
+const API_URL = 'https://restcountries.eu/rest/v2'
 
-export function getSuggestions(value) {
-  const lowerCasedValue = value.toLowerCase()
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const rv = suggestions
-        .filter(a => a.name.toLowerCase().includes(lowerCasedValue))
-        .map(({ name, code }) => ({ label: name, value: code }))
-
-      return resolve(rv)
-    }, 600)
-  })
+export function getCountries(name) {
+  return fetch(`${API_URL}/name/${name}`)
+    .then(res => res.json())
+    .then((countries) => {
+      return countries.map((country) => {
+        return {
+          label: country.name,
+          value: country.numericCode,
+          flag: country.flag,
+        }
+      })
+    })
 }

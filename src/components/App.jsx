@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, FormGroup, Label, Input } from 'reactstrap'
 import MagicSelect from './MagicSelect.jsx'
+import CustomValue from './CustomValue.jsx'
+import CustomOption from './CustomOption.jsx'
 import * as actions from '../actions'
 import * as selectors from '../selectors'
 import { connect } from 'react-redux'
@@ -66,6 +68,8 @@ export default class App extends React.Component {
           multiple={this.state.multiple}
           onChange={this.changeValue}
           onAutocomplete={this.props.getSuggestions}
+          valueComponent={CustomValue}
+          optionComponent={CustomOption}
         />
       </Container>
     )

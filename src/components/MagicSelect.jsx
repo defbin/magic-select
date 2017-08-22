@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
 
-export default class MagicSelect extends React.Component {
+export default class MagicSelect extends React.PureComponent {
   static propTypes = {
     value: PropTypes.any,
     options: PropTypes.array,
